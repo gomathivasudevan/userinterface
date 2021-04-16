@@ -1,0 +1,92 @@
+<div class="container">
+
+    <div class="card bg-light">
+        <article class="card-body mx-auto" style="max-width: 400px;">
+            <h4 class="card-title mt-3 text-center">Create Account</h4>
+            <p class="text-center">Get started with your free account</p>
+            <form [formGroup]="registrationForm" class="reistration-container" (ngSubmit)="createAccount()">
+                <div class="form-group input-group w-100 mb-0">
+                    <div class="input-group-prepend" style="height:38px">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                    </div>
+                    <p [ngClass]="{ 'has-error': isSubmitted && formControls.name.errors }">
+                        <input formControlName="name" class="form-control" placeholder="Full name" type="text">
+                    </p>
+                </div> <!-- form-group// -->
+                <div *ngIf="isSubmitted && formControls.name.errors" class="help-block text-danger">
+                    <div *ngIf="formControls.name.errors.required">*Name is required</div>
+                </div>
+                <div class="form-group input-group  w-100 mb-0">
+                    <div class="input-group-prepend" style="height:38px">
+                        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                    </div>
+                    <p [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">
+                        <input formControlName="email" class="form-control" placeholder="Email address" type="email">
+                    </p>
+                </div> <!-- form-group// -->
+
+                <div *ngIf="isSubmitted && formControls.email.errors" class="help-block text-danger">
+                    <div *ngIf="formControls.email.errors.required">*Email is required</div>
+                </div>
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+                    </div>
+                    <select class="custom-select" style="max-width: 120px;">
+                        <option selected="">+971</option>
+                        <option value="1">+972</option>
+                        <option value="2">+198</option>
+                        <option value="3">+701</option>
+                    </select>
+                    <p [ngClass]="{ 'has-error': isSubmitted && formControls.phone.errors }">
+                        <input formControlName="phone" class="form-control" placeholder="Phone number" type="text">
+                    </p>
+                    <div *ngIf="isSubmitted && formControls.phone.errors" class="help-block text-danger">
+                        <div *ngIf="formControls.phone.errors.required">*Phone number is required</div>
+                    </div>
+                </div> <!-- form-group// -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-building"></i> </span>
+                    </div>
+                    <select formControlName="jobtype" class="form-control">
+                        <option selected=""> Select job type</option>
+                        <option>Designer</option>
+                        <option>Manager</option>
+                        <option>Accaunting</option>
+                    </select>
+                </div> <!-- form-group end.// -->
+                <div class="form-group input-group w-100 mb-0">
+                    <div class="input-group-prepend" style="height:38px">
+                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                    </div>
+                    <p [ngClass]="{ 'has-error': isSubmitted && formControls.createpassword.errors }">
+                    <input formControlName="createpassword" class="form-control" placeholder="Create password" type="password">
+                    </p>
+                </div> <!-- form-group// -->
+                <div *ngIf="isSubmitted && formControls.createpassword.errors" class="help-block text-danger">
+                    <div *ngIf="formControls.createpassword.errors.required">*CreatePassword is required</div>
+                </div>
+                <div class="form-group input-group w-100 mb-0">
+                    <div class="input-group-prepend" style="height:38px">
+                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                    </div>
+                    <p [ngClass]="{ 'has-error': isSubmitted && formControls.repeatpassword.errors }">
+                    <input formControlName="repeatpassword" class="form-control" placeholder="Repeat password" type="password">
+                    </p>
+                </div> <!-- form-group// -->
+                <div *ngIf="isSubmitted && formControls.repeatpassword.errors" class="help-block text-danger">
+                    <div *ngIf="formControls.repeatpassword.errors.required">*RepeatPassword is required</div>
+                    <div *ngIf="formControls.repeatpassword.errors.mustMatch">*Passwords must match</div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block"> Create Account </button>
+                </div> <!-- form-group// -->
+                <p class="text-center">Have an account? <a class="underlineHover" routerLink="/files/login">Log In</a>
+                </p>
+            </form>
+        </article>
+    </div> <!-- card.// -->
+
+</div>
+<!--container end.//-->

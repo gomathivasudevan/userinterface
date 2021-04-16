@@ -1,0 +1,7 @@
+<nav *NgIf = "!this.router.url.includes('/files/login')">
+    <ul>
+        <li><a routerLink="files/login" routerLinkActive="active">Login Component</a></li>
+        <li><a routerLink="files/registration" routerLinkActive="active">Registration Component</a></li>
+        <li><a routerLink="files/dashboard" routerLinkActive="active">Dashboard Component</a></li>
+    </ul>
+</nav>

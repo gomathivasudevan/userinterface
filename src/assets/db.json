@@ -1,0 +1,28 @@
+{
+    "profile": [
+        {
+            "id": 1,
+            "name": "Ranjith",
+            "experience": "2.6",
+            "designation": "SSE"
+        },
+        {
+            "id": 2,
+            "name": "Sathya",
+            "experience": "6.6",
+            "designation": "SSE"
+        },
+        {
+            "id": 3,
+            "name": "Punitha",
+            "experience": "4.6",
+            "designation": "SSE"
+        },
+        {
+            "id": 4,
+            "name": "Sahrmila",
+            "experience": "3.6",
+            "designation": "SSE"
+        }
+    ]
+}
