@@ -12,6 +12,14 @@ export class RegistrationComponent implements OnInit {
   constructor(private router: Router, private formBuilder: FormBuilder ) { }
   registrationForm: FormGroup;
   isSubmitted  =  false;
+  
+  fullNameVal = '';
+  emailVal = '';
+  phoneVal = '';
+  jobVal = '';
+  createPasswordVal = '';
+  repeatPasswordVal = '';
+
   ngOnInit(): void {
     this.registrationForm  =  this.formBuilder.group({
       name: ['', Validators.required],

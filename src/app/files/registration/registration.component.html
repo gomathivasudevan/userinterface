@@ -10,7 +10,7 @@
                         <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                     </div>
                     <p [ngClass]="{ 'has-error': isSubmitted && formControls.name.errors }">
-                        <input formControlName="name" class="form-control" placeholder="Full name" type="text">
+                        <input [(ngModel)]="fullNameVal" formControlName="name" class="form-control" placeholder="Full name" type="text">
                     </p>
                 </div> <!-- form-group// -->
                 <div *ngIf="isSubmitted && formControls.name.errors" class="help-block text-danger">
@@ -21,7 +21,7 @@
                         <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
                     </div>
                     <p [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">
-                        <input formControlName="email" class="form-control" placeholder="Email address" type="email">
+                        <input [(ngModel)]="emailVal" formControlName="email" class="form-control" placeholder="Email address" type="email">
                     </p>
                 </div> <!-- form-group// -->
 
@@ -39,7 +39,7 @@
                         <option value="3">+701</option>
                     </select>
                     <p [ngClass]="{ 'has-error': isSubmitted && formControls.phone.errors }">
-                        <input formControlName="phone" class="form-control" placeholder="Phone number" type="text">
+                        <input [(ngModel)]="phoneVal" formControlName="phone" class="form-control" placeholder="Phone number" type="text">
                     </p>
                     <div *ngIf="isSubmitted && formControls.phone.errors" class="help-block text-danger">
                         <div *ngIf="formControls.phone.errors.required">*Phone number is required</div>
@@ -49,7 +49,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-building"></i> </span>
                     </div>
-                    <select formControlName="jobtype" class="form-control">
+                    <select formControlName="jobtype" class="form-control" [(ngModel)]="jobVal">
                         <option selected=""> Select job type</option>
                         <option>Designer</option>
                         <option>Manager</option>
@@ -61,7 +61,7 @@
                         <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                     </div>
                     <p [ngClass]="{ 'has-error': isSubmitted && formControls.createpassword.errors }">
-                    <input formControlName="createpassword" class="form-control" placeholder="Create password" type="password">
+                    <input [(ngModel)]="createPasswordVal" formControlName="createpassword" class="form-control" placeholder="Create password" type="password">
                     </p>
                 </div> <!-- form-group// -->
                 <div *ngIf="isSubmitted && formControls.createpassword.errors" class="help-block text-danger">
@@ -72,7 +72,7 @@
                         <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                     </div>
                     <p [ngClass]="{ 'has-error': isSubmitted && formControls.repeatpassword.errors }">
-                    <input formControlName="repeatpassword" class="form-control" placeholder="Repeat password" type="password">
+                    <input [(ngModel)]="repeatPasswordVal" formControlName="repeatpassword" class="form-control" placeholder="Repeat password" type="password">
                     </p>
                 </div> <!-- form-group// -->
                 <div *ngIf="isSubmitted && formControls.repeatpassword.errors" class="help-block text-danger">
@@ -84,6 +84,14 @@
                 </div> <!-- form-group// -->
                 <p class="text-center">Have an account? <a class="underlineHover" routerLink="/files/login">Log In</a>
                 </p>
+
+
+                <p>{{fullNameVal}}</p>
+                <p>{{emailVal}}</p>
+                <p>{{phoneVal}}</p>
+                <p>{{jobVal}}</p>
+                <p>{{createPasswordVal}}</p>
+                <p>{{repeatPasswordVal}}</p>
             </form>
         </article>
     </div> <!-- card.// -->

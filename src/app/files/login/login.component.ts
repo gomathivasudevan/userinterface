@@ -13,6 +13,8 @@ export class LoginComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router, private formBuilder: FormBuilder ) { }
   loginForm: FormGroup;
   isSubmitted  =  false;
+  emailval = '';
+  passwordVal='';
   ngOnInit(): void {
     this.loginForm  =  this.formBuilder.group({
       email: ['', Validators.required],
