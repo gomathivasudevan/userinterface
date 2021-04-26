@@ -15,16 +15,16 @@
   ],
   "profile": [
     {
-      "id": 5,
-      "name": "dfdf",
-      "experience": "fdfd",
-      "designation": "fdfdf"
-    },
-    {
       "id": 6,
       "name": "Ranjith",
       "experience": "2.6",
       "designation": "SE"
+    },
+    {
+      "id": 7,
+      "name": "Gomathi",
+      "experience": "6",
+      "designation": "SSE"
     }
   ]
 }
