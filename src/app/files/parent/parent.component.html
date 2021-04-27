@@ -1,0 +1,11 @@
+<h1>
+{{ dataFromChild }}
+</h1>
+
+<div *ngFor="let employee of employees">
+<!-- when child component raises this notify event, which also going to pass 
+employee name as a eventdata or eventpayload , we need to specify $event to receve that payload.-->
+    <app-child [employee]="employee" (notify)="handleNotify($event)"></app-child>
+</div>
+
+

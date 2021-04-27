@@ -6,11 +6,14 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { EmployeeService } from 'src/app/employee.service';
+import { BetterHighlightDirective } from './better-highlight/better-highlight.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    BetterHighlightDirective
   ],
   imports: [
     BrowserModule,
@@ -18,7 +21,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule,
   ],
-  providers: [HttpClientModule],
+  providers: [HttpClientModule, EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
