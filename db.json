@@ -15,14 +15,22 @@
   ],
   "profile": [
     {
+<<<<<<< HEAD
       "id": 5,
       "name": "dfdf",
       "experience": "fdfd",
       "designation": "fdfdf"
+=======
+      "id": 6,
+      "name": "Ranjith",
+      "experience": "2.6",
+      "designation": "SE"
+>>>>>>> 721d9a484093c4aeb2dc5fcc0ebcec1a95fb5a8f
     },
     {
       "id": 7,
       "name": "Gomathi",
+<<<<<<< HEAD
       "experience": "7",
       "designation": "SSE"
     },
@@ -43,6 +51,10 @@
       "name": "Ranjith",
       "experience": "3",
       "designation": "SE"
+=======
+      "experience": "6",
+      "designation": "SSE"
+>>>>>>> 721d9a484093c4aeb2dc5fcc0ebcec1a95fb5a8f
     }
   ]
 }
