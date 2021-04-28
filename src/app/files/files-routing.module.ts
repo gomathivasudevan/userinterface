@@ -7,38 +7,50 @@ import { ManageusersComponent } from './manageusers/manageusers.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { TemplatedrivenformComponent } from './templatedrivenform/templatedrivenform.component';
 import { ParentComponent } from './parent/parent.component';
+import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
   {
-    path:'',
+    path: '',
     redirectTo: 'templatedrivenform',
     pathMatch: 'full'
   },
   {
-    path:'login',
+    path: 'login',
     component: LoginComponent
   },
   {
-    path:'registration',
+    path: 'registration',
     component: RegistrationComponent
   },
   {
-    path:'dashboard',
+    path: 'dashboard',
     component: DashboardComponent,
     canActivate: [AuthGuard]
   },
   {
-    path:'manageusers',
-    component: ManageusersComponent
-  },
-  {
-    path:'templatedrivenform',
+    path: 'templatedrivenform',
     component: TemplatedrivenformComponent
   },
   {
-    path:'parent',
+    path: 'parent',
     component: ParentComponent
+  },
+  {
+    path: 'manageusers',
+    component: ManageusersComponent,
+    children: [
+      {
+        path: ':id/:name',
+        component: UserComponent
+      }
+    ]
   }
+  //commented this piece to setting up child root
+  // {
+  //   path: 'manageusers/:id/:name',
+  //   component: UserComponent
+  // }
 ];
 
 @NgModule({

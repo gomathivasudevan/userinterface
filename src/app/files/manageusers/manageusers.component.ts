@@ -28,7 +28,6 @@ export class ManageusersComponent implements OnInit {
 
   ngOnInit(): void {
     this.manageusersservice.getAll().subscribe((data: Userdetails[]) => {
-      console.log(data);
       this.User = data;
     })
   }
