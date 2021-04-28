@@ -12,7 +12,7 @@ import { UserComponent } from './user/user.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'templatedrivenform',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -39,6 +39,8 @@ const routes: Routes = [
   {
     path: 'manageusers',
     component: ManageusersComponent,
+    canActivate: [AuthGuard],
+    canActivateChild: [AuthGuard],
     children: [
       {
         path: ':id/:name',
