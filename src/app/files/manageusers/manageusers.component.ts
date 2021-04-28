@@ -38,15 +38,15 @@ export class ManageusersComponent implements OnInit {
 
   submit(f) {
     const newUser = f.value;
-    // const existVal = this.User?.find(x => x.id == f.value.id);
-    // if (existVal != undefined || existVal != null) {
-    //   this.manageusersservice.update(f.value.id, f.value).subscribe((data) => { })
-    // }
-    // else {
+    const existVal = this.User?.find(x => x.id == f.value.id);
+    if (existVal != undefined || existVal != null) {
+      this.manageusersservice.update(f.value.id, f.value).subscribe((data) => { })
+    }
+    else {
       this.manageusersservice.create(newUser).subscribe((data) => {
         this.User = data;
       });
-   // }
+   }
     this.manageusersservice.getAll().subscribe((data: Userdetails[]) => {
       this.User = data;
     })
