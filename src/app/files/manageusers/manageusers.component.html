@@ -5,7 +5,7 @@
             <button type="button" (click)="addUser()">{{OnButton}}</button>
 
             <table class="table table-bordered">
-                <tr>
+                <tr [ngClass]="{odd:User.length %2 != 0}">
                     <th>ID</th>
                     <th>Name</th>
                     <th>Experience</th>
@@ -14,13 +14,17 @@
                 </tr>
                 <tr *ngFor="let user of User" [routerLink]="['/manageusers',user.id, user.name]">
                     <td>{{ user?.id }}</td>
-                    <td>{{ user?.name }}</td>
+                    <td [ngStyle]="{background: user?.name === 'Max'? 'green' : 'white'}">{{ user?.name }}</td>
                     <td>{{ user?.experience }}</td>
                     <td>{{ user?.designation }}</td>
                     <td>
-                        <button type="button" (click)="editUser(user)" class="btn btn-danger">Edit</button>
-                        <button type="button" (click)="deleteUser(user.id)" class="btn btn-danger">Delete</button>
+                        <button *ngIf="user.name != 'Ranjith'" type="button" (click)="editUser(user)" class="btn btn-danger">Edit</button>
+                        <button *ngIf="user.name != 'Ranjith'" type="button" (click)="deleteUser(user.id)" class="btn btn-danger">Delete</button>
+                        <span *ngIf="user.name === 'Ranjith'">You dont have privilege to edit or delete this user !</span>
                     </td>
+                </tr>
+                <tr>
+                    <p appBasicHighlight>Style me with basic Directive!</p>
                 </tr>
             </table>
         </div>

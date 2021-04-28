@@ -5,12 +5,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { ManageusersComponent } from './manageusers/manageusers.component';
 import { RegistrationComponent } from './registration/registration.component';
-import { UserComponent } from './user/user.component';
+import { TemplatedrivenformComponent } from './templatedrivenform/templatedrivenform.component';
+import { ParentComponent } from './parent/parent.component';
 
 const routes: Routes = [
   {
     path:'',
-    redirectTo: 'login',
+    redirectTo: 'templatedrivenform',
     pathMatch: 'full'
   },
   {
@@ -31,8 +32,12 @@ const routes: Routes = [
     component: ManageusersComponent
   },
   {
-    path:'manageusers/:id/:name',
-    component: UserComponent
+    path:'templatedrivenform',
+    component: TemplatedrivenformComponent
+  },
+  {
+    path:'parent',
+    component: ParentComponent
   }
 ];
 
