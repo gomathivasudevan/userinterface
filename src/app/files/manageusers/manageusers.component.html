@@ -12,7 +12,7 @@
                     <th>Designation</th>
                     <th width="220px">Action</th>
                 </tr>
-                <tr *ngFor="let user of User">
+                <tr *ngFor="let user of User" [routerLink]="['/manageusers',user.id, user.name]">
                     <td>{{ user?.id }}</td>
                     <td>{{ user?.name }}</td>
                     <td>{{ user?.experience }}</td>

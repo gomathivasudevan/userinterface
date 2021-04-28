@@ -8,9 +8,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ManageusersComponent } from './manageusers/manageusers.component';
 import { HttpClientModule } from '@angular/common/http';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
-  declarations: [LoginComponent, RegistrationComponent, DashboardComponent, ManageusersComponent],
+  declarations: [LoginComponent, RegistrationComponent, DashboardComponent, ManageusersComponent, UserComponent],
   imports: [
     CommonModule,
     FilesRoutingModule,

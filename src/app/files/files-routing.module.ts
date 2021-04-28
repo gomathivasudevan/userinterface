@@ -5,6 +5,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { ManageusersComponent } from './manageusers/manageusers.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,10 @@ const routes: Routes = [
   {
     path:'manageusers',
     component: ManageusersComponent
+  },
+  {
+    path:'manageusers/:id/:name',
+    component: UserComponent
   }
 ];
 
