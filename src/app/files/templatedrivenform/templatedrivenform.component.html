@@ -1,37 +1,67 @@
 <div class="container"> 
     <div class="row">
         <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-    <form (ngSubmit)="onSubmit()" #f="ngForm">
-    <div id="user-data">
-        <div class="form-group">
-            <label for="username">User Name</label>
-            <input class="form-control"
-                id="username" 
-                type="text" 
-                ngModel
-                name="name"
-                required
-                #name="ngModel">
-                <span class="help-block" *ngIf="!name.valid && name.touched">Name is required!</span>
-        </div>
-    
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input class="form-control"
-                id="email" 
-                type="email" 
-                ngModel
-                name="email"
-                required
-                email
-                #email="ngModel">
-            <span class="help-block" *ngIf="!email.valid && email.touched">Please enter valid email!</span>
+            <form (ngSubmit)="onSubmit(f.value)" #f="ngForm">
+                <div id="user-data">
+                    <div class="form-group">
+                        <label for="username">User Name</label>
+                        <input class="form-control"
+                            id="username" 
+                            type="text" 
+                            ngModel
+                            name="name"
+                            required
+                            #name="ngModel">
+                            <span class="help-block" *ngIf="!name.valid && name.touched">Name is required!</span>
+                    </div>
+                
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input class="form-control"
+                            id="email" 
+                            type="email" 
+                            ngModel
+                            name="email"
+                            required
+                            email
+                            #email="ngModel">
+                        <span class="help-block" *ngIf="!email.valid && email.touched">Please enter valid email!</span>
+                    </div>
+                </div>
+                <button 
+                    type="submit" 
+                    class="btn btn-primary"
+                    [disabled]="!f.valid">Submit</button>
+            </form>
+      
         </div>
     </div>
-    <button 
-        type="submit" 
-        class="btn btn-primary"
-        [disabled]="!f.valid">Submit</button>
-  </form>
-</div>
+    <div class="row">
+        <hr>
+        <button 
+                type="button" 
+                (click) = "onFetch()"
+                class="btn btn-primary">Fetch Posts</button> | 
+        <button 
+                type="button" 
+                (click) = "onClear()"
+                class="btn btn-primary">Clear Posts</button>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-md-6 col-md-offset-3">
+            <p *ngIf="loadedPosts.length < 1"> No posts available!</p>
+            <ul class="list-group" *ngIf="loadedPosts.length >= 1">
+                <li class="list-group-item" *ngFor="let post of loadedPosts">
+                    <p>{{ post.name }}</p>
+                    <p>{{ post.email }}</p>
+                </li>
+            </ul>
+            <p *ngIf="isFetching && !error">Loading...</p>
+            <div class="alert alert-danger" *ngIf="error">
+                <h1>An Error Occured!</h1>
+                <p>{{error}}</p>
+                <button class="btn btn-danger" (click)="onHandleError()">Okay</button>
+            </div>
+        </div>
+    </div>
 </div>

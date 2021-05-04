@@ -6,6 +6,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 const routes: Routes = [
   {
     path: 'files',
+    //lazy loading
     loadChildren: () => import('./files/files.module').then(m => m.FilesModule)
   },
   {
@@ -18,7 +19,7 @@ const routes: Routes = [
     component: PageNotFoundComponent
   },
   {
-    path: 'something',
+    path: '**',
     redirectTo: 'not-found'
   }
 ];
