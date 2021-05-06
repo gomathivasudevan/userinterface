@@ -9,6 +9,7 @@ import { Post } from "./posts.model";
 export class PostsService{
 
   error = new Subject<string>();
+  
     constructor(private http: HttpClient) { }
 
     createPost(name: string, email: string) {

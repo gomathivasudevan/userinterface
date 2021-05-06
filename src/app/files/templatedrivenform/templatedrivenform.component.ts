@@ -18,6 +18,7 @@ export class TemplatedrivenformComponent implements OnInit, OnDestroy {
   loadedPosts: Post[] = [];
   isFetching = false;
   error = null;
+  
   private errorSub: Subscription;
 
   constructor(private http: HttpClient, private postsService: PostsService) { }
@@ -55,9 +56,10 @@ export class TemplatedrivenformComponent implements OnInit, OnDestroy {
   //HTTP client implementation. So, i am overwriting this file
   // onSubmit(postData: {username: string; email: string}){
   //initially i dont declare the type for the postData. Now created the model for this.
-  //So. commented the above line.
+  //So, commented the above line.
   onSubmit(postData: Post){
     this.postsService.createPost(postData.name, postData.email);
+    this.signupForm.reset();
   }
 
   onFetch(){
